@@ -1,0 +1,26 @@
+{
+  "name": "reddit-clone",
+  "version": "1.0.0",
+  "description": "ACS 2230 Server Side Architecture Reddit Clone Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joemiddie13/node-reddit-clone.git"
+  },
+  "keywords": [
+    "reddit"
+  ],
+  "author": "Joseph Paul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joemiddie13/node-reddit-clone/issues"
+  },
+  "homepage": "https://github.com/joemiddie13/node-reddit-clone#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2"
+  }
+}
