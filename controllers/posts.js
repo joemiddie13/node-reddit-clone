@@ -25,11 +25,20 @@ module.exports = (app) => {
   // INDEX
   app.get('/', async (req, res) => {
     try {
-      const posts = await Post.find({});
-      res.render('home', { posts });
+      const posts = await Post.find({}).lean();
+      return res.render('posts-index', { posts });
     } catch (err) {
-      console.error(err);
-      res.status(500).send("Error retrieving posts.");
+      console.log(err.message);
+    }
+  });
+
+  // LOOK UP THE POST
+  app.get('/posts/:id', async(req, res) => {
+    try {
+      const post = await Post.findById(req.params.id).lean();
+      return res.render('posts-show', { post });
+    } catch (err) {
+      console.log(err.message);
     }
   });
 };
