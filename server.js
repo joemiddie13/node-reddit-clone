@@ -8,12 +8,17 @@ const hbs = exphbs.create({ defaultLayout: 'main' });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// Required
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set db
+require('./data/reddit-db');
+
+// Posts Controller
+require('./controllers/posts')(app);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
-});
-
-// HOME Route
-app.get('/', (req, res) => {
-  res.render('home');
 });
