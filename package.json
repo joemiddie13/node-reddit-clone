@@ -4,7 +4,7 @@
   "description": "ACS 2230 Server Side Architecture Reddit Clone Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,10 @@
     "express-handlebars": "^7.1.2",
     "express-validator": "^7.0.1",
     "mongoose": "^8.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.4.0",
+    "mocha": "^10.4.0"
   }
 }
