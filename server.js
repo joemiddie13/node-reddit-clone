@@ -13,10 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Security
+const checkAuth = require('./middleware/checkAuth');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 app.use(cookieParser());
+app.use(checkAuth);
 
 // Set db
 require('./data/reddit-db');
