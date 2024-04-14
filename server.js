@@ -12,12 +12,19 @@ app.set('view engine', 'handlebars');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Security
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+app.use(cookieParser());
+
 // Set db
 require('./data/reddit-db');
 
 // Posts Controller
 require('./controllers/posts')(app);
 require('./controllers/comments')(app);
+require('./controllers/auth.js')(app);
 
 // Start the server
 app.listen(port, () => {
