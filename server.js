@@ -27,6 +27,7 @@ require('./data/reddit-db');
 require('./controllers/posts')(app);
 require('./controllers/comments')(app);
 require('./controllers/auth.js')(app);
+require('./controllers/replies.js')(app);
 
 // Start the server
 app.listen(port, () => {
